@@ -17,33 +17,34 @@
             <p><a href="#contact">Contact</a></p>
         </nav>
     </header>
-    <section id="home"  class="banner">
-        <h1>We are wholesale Dealers</h1>
-        <div class="animation">
-            <div class="counter">
-                <h2 data-target="1000">1000+</h2>
-                <p>Products</p>
-            </div>
-            <div class="counter">
-                <h2 data-target="500">500+</h2>
-                <p>Happy Customers</p>
-            </div>
-            <div class="counter">
-                <h2 data-target="14">14+</h2>
-                <p>Cities</p>
-            </div>
-        </div>
-    </section>
+    <section id="home" class="banner">
+  <h1>We are wholesale Dealers of Experience</h1>
+  <div class="animation">
+    <div class="counter">
+      <h2 data-target="1000">0</h2>
+      <p>Products</p>
+    </div>
+    <div class="counter">
+      <h2 data-target="500">0</h2>
+      <p>Happy Customers</p>
+    </div>
+    <div class="counter">
+      <h2 data-target="14">0</h2>
+      <p>Cities</p>
+    </div>
+  </div>
+</section>
+
     <section id="product" class="products">
        <div class="box">
         <div class="image">
             <img src="/beautiful-plant-illustration.jpg" alt="Plant Illustration">
             <div class="overlay">
-                <h3>Beautiful Plant</h3>
+                <h3>Elegant Bonsai</h3>
             </div>
         </div>
         <div class="content">
-            <p>Perfect for your home or office. Adds greenery and freshness to any space.</p>   
+            <p>Bring calmness and beauty into your space with this handcrafted Bonsai.</p>   
         </div>
     </div>
 
@@ -51,65 +52,65 @@
         <div class="image">
             <img src="/81bhmUOcy4L._SL1500_.jpg" alt="Plant Illustration">
             <div class="overlay">
-                <h3>Beautiful Plant</h3>
+                <h3>Lifelike Artificial Tree</h3>
             </div>
         </div>
         <div class="content">
-            <p>Perfect for your home or office. Adds greenery and freshness to any space.</p>   
+            <p>Our premium artificial tree adds freshness and style to any room—no watering just lasting elegance.</p>   
         </div>
     </div>
         <div class="box">
         <div class="image">
             <img src="/close-up-colorful-roses-bouquet.jpg" alt="Plant Illustration">
             <div class="overlay">
-                <h3>Beautiful Plant</h3>
+                <h3>Everlasting Blooms</h3>
             </div>
         </div>
         <div class="content">
-            <p>Perfect for your home or office. Adds greenery and freshness to any space.</p>   
+            <p>Our artificial flowers are designed to look fresh and natural, making your space lively with zero effort.</p>   
         </div>
     </div>
        <div class="box">
         <div class="image-pot">
             <img src="/4d936b79-5f99-4a7a-a142-5fb9a474e74f.jpg" alt="Plant Illustration">
             <div class="overlay">
-                <h3>Beautiful Plant</h3>
+                <h3>Modern Flower Vase</h3>
             </div>
         </div>
         <div class="content">
-            <p>Perfect for your home or office. Adds greenery and freshness to any space.</p>   
+            <p>Designed with style and durability, this vase is the perfect centerpiece for tables, shelves, and workspaces.</p>   
         </div>
     </div>
         <div class="box">
         <div class="image">
             <img src="/SL_120120_38490_13.jpg" alt="Plant Illustration">
             <div class="overlay">
-                <h3>Beautiful Plant</h3>
+                <h3>Elegant Photo Frame</h3>
             </div>
         </div>
         <div class="content">
-            <p>Perfect for your home or office. Adds greenery and freshness to any space.</p>   
+            <p>Keep your special moments alive with our beautifully crafted photo frame. Perfect for home or office décor.</p>   
         </div>
     </div>
     <div class="box">
         <div class="image">
             <img  src="/square-clock-outdoors-still-life.jpg" alt="Plant Illustration">
             <div class="overlay">
-                <h3>Beautiful Plant</h3>
+                <h3>Stylish Wall Clock</h3>
             </div>
         </div>
         <div class="content">
-            <p>Perfect for your home or office. Adds greenery and freshness to any space.</p>   
+            <p>A modern clock that blends functionality with design. Ideal for adding charm and punctuality to any space.</p>   
         </div>
     </div>
     </section>
     <footer id="contact" class="footer">
   <div class="footer-social">
-    <h3>Connect With Us</h3>
-    <a href="#" class="social-link">Instagram</a>
-    <a href="#" class="social-link">Facebook</a>
-    <a href="mailto:info@example.com" class="social-link">Email</a>
-  </div>  
+  <h3>Connect With Us</h3>
+  <a href="https://www.instagram.com/dpworld00912" target="_blank" class="social-link">Instagram</a>
+  <a href="mailto:Dpworld0912@gmail.com" class="social-link">Email</a>
+  <a href="tel:+918078302180" class="social-link">+91 8078302180</a>
+</div>
 
   <div class="footer-bottom">
     <p>&copy; 2025 Wholesale Dealers. All rights reserved.</p>
@@ -117,28 +118,32 @@
 </footer>
 
 </body>
+<script>
+const counters = document.querySelectorAll('.counter h2');
+
+counters.forEach(counter => {
+  const target = +counter.getAttribute('data-target');
+  const isCities = counter.nextElementSibling.innerText.includes("Cities"); // check if it's the "Cities" one
+
+  const updateCount = () => {
+    const count = +counter.innerText.replace("+", ""); // remove + before parsing
+
+    // If it's the "Cities" counter, increment by 1 only
+    const increment = isCities ? 1 : Math.ceil(target / 200);
+
+    if (count < target) {
+      counter.innerText = (count + increment) + "+"; 
+      setTimeout(updateCount, isCities ? 300 : 20); 
+    } else {
+      counter.innerText = target + "+"; // final number with +
+    }
+  };
+
+  updateCount();
+});
+</script>
+
+
 </html>
 
-<script>
-// const counters = document.querySelectorAll('.animation h2');
 
-// counters.forEach(counter => {
-//     const updateCount = () => {
-//         const target = +counter.getAttribute('data-target');
-//         const count = +counter.innerText;
-
-//         // dynamic increment
-//         const increment = target < 50 ? 1 : Math.ceil(target / 200);
-
-//         if (count < target) {
-//             counter.innerText = count + increment;
-//             setTimeout(updateCount, 20); // slower for small numbers
-//         } else {
-//             counter.innerText = target;
-//         }
-//     };
-
-//     updateCount();
-// });
-
-</script>
