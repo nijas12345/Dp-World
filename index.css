@@ -27,17 +27,70 @@ h1 {
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
   }
 
+#loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff; /* white background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  transition: opacity 0.1s ease;
+}
+
+#loader.hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+/* Loader text */
+#loader h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #3498db; /* DP World blue */
+  animation: pulse 1.5s infinite;
+  font-family: Arial, sans-serif;
+}
+
+/* Simple animation */
+@keyframes pulse {
+  0% { opacity: 0.3; transform: scale(0.95); }
+  50% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0.3; transform: scale(0.95); }
+}
+
+/* Banner */
 .banner {
+  display: none; /* hidden until background loads */
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #fff;
+  text-align: center;
+}
+
+
+/* .banner {
+  background: #222;
   display: flex;
   width: 100%;
   height: 110vh;   
   flex-direction: column;              
-  background-image: url('/home.jpg');
+  background-image: url('home.jpg');
   background-size: cover;         
   align-items: center;
   justify-content: center;
-  
-}
+} */
 
 .animation{
   display: flex;
